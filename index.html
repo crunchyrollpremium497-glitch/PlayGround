@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#102323" />
+  <title>CHITTAGONG LIFE — City Stories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main id="game-shell" aria-label="Chittagong Life open world game">
+    <canvas id="world" aria-label="3D game world"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Chittagong Life home"><span class="brand-mark">C<span>✳</span></span><span class="brand-name">CHITTAGONG <b>LIFE</b><small>CITY STORIES · CHAPTER 01</small></span></a>
+      <div class="top-meta"><span class="live-dot"></span><span>CHATTAGRAM, BANGLADESH</span><i></i><span id="clock">17:42</span><button id="weather-btn" class="weather-button" aria-label="Change weather">☀ <span>Clear</span></button></div>
+      <button id="sound-btn" class="icon-button" aria-label="Toggle ambient sound">♫</button>
+    </header>
+    <section class="mission-card glass">
+      <div class="eyebrow"><span class="eyebrow-line"></span> YOUR AFTERNOON</div>
+      <h1>A city that<br><em>never stands still.</em></h1>
+      <p>Take the long way home. There’s always something happening.</p>
+      <div class="mission-progress"><div class="progress-copy"><span>NEIGHBORHOOD NOTES</span><b id="discover-count">0 / 5</b></div><div class="progress-track"><i id="progress-fill"></i></div></div>
+      <div id="nearby-note" class="nearby-note"><span class="spark">✳</span><span>Explore the city to find its stories.</span></div>
+    </section>
+    <aside class="district-tag glass"><span class="district-dot"></span><div><small>YOU ARE IN</small><b id="district-name">GEC CIRCLE</b></div><span class="tag-coords" id="coords">22.359° N</span></aside>
+    <section class="map-card glass" aria-label="City map">
+      <div class="map-header"><div><span class="eyebrow-line"></span><b>CITY GUIDE</b></div><span>CTG <span class="map-live">●</span></span></div>
+      <div class="map-visual">
+        <svg viewBox="0 0 220 166" role="img" aria-label="Stylized map of Chattogram neighborhoods">
+          <path class="map-water" d="M0 126 Q34 112 57 128 T114 127 T166 120 T220 126V166H0Z" />
+          <path class="map-road" d="M8 108L53 79 90 89 128 55 206 63M49 8L72 45 90 89 111 143M152 4L128 55 155 94 197 119M4 49L72 45 128 55 213 30" />
+          <path class="map-road minor" d="M19 18L49 50 53 79 33 104M87 13L72 45 96 66 90 89 60 114M170 11L153 45 182 72 155 94 127 111M103 15L128 55 107 75 142 101" />
+          <g class="map-place" data-place="Agrabad"><circle cx="48" cy="46" r="3"/><text x="14" y="39">AGRABAD</text></g>
+          <g class="map-place active" data-place="GEC Circle"><circle cx="90" cy="88" r="4"/><text x="98" y="91">GEC CIRCLE</text></g>
+          <g class="map-place" data-place="Chawkbazar"><circle cx="155" cy="95" r="3"/><text x="160" y="101">CHAWKBAZAR</text></g>
+          <g class="map-place" data-place="Muradpur"><circle cx="151" cy="47" r="3"/><text x="157" y="49">MURADPUR</text></g>
+          <g class="map-place" data-place="Patenga"><circle cx="57" cy="134" r="3"/><text x="20" y="151">PATENGA</text></g>
+          <circle id="map-player-halo" cx="90" cy="88" r="8"/><circle id="map-player" cx="90" cy="88" r="3.1"/>
+        </svg>
+        <span class="map-north">N ↑</span>
+      </div>
+      <div class="map-legend"><span><i class="legend-player"></i> YOU</span><span><i class="legend-place"></i> PLACES</span><button id="map-toggle">FULL MAP ↗</button></div>
+    </section>
+    <div class="bottom-left"><div class="weather-status glass"><span id="weather-icon">☀</span><span><b id="weather-label">GOLDEN HOUR</b><small>26° · COASTAL BREEZE</small></span></div><div class="toast glass" id="toast" aria-live="polite"></div></div>
+    <div class="interaction" id="interaction"><span class="keycap">E</span><span id="interaction-label">Discover this place</span></div>
+    <div class="controls-hint"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> MOVE</span><span><kbd>SHIFT</kbd> RUN</span><span><kbd>SPACE</kbd> HOP</span><span><kbd>E</kbd> INTERACT</span><span><kbd>DRAG</kbd> LOOK</span></div>
+    <div class="touch-controls" id="touch-controls">
+      <div class="joystick" id="joystick"><div class="joy-ring"></div><div class="joy-knob" id="joy-knob"></div></div>
+      <button class="touch-action" id="touch-run">RUN</button><button class="touch-action touch-interact" id="touch-interact">TALK / VIEW</button>
+    </div>
+    <button class="map-close" id="map-close">CLOSE MAP <span>×</span></button>
+    <div class="map-overlay" id="map-overlay"><div class="map-overlay-title"><small>THE PORT CITY</small><b>Chattogram</b><span>Five neighborhoods. One restless coast.</span></div><div class="map-overlay-places" id="map-overlay-places"></div></div>
+    <div id="loading" class="loading"><span class="loading-mark">C✳</span><span>WAKING UP THE CITY</span></div>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
