@@ -17,6 +17,7 @@
     <header class="topbar">
       <a class="brand" href="#" aria-label="Chittagong Life home"><span class="brand-mark">C<span>✳</span></span><span class="brand-name">CHITTAGONG <b>LIFE</b><small>CITY STORIES · CHAPTER 01</small></span></a>
       <div class="top-meta"><span class="live-dot"></span><span>CHATTAGRAM, BANGLADESH</span><i></i><span id="clock">17:42</span><button id="weather-btn" class="weather-button" aria-label="Change weather">☀ <span>Clear</span></button></div>
+      <button id="city-button" class="systems-button" aria-label="Open city life menu">CITY LIFE <span>↗</span></button>
       <button id="sound-btn" class="icon-button" aria-label="Toggle ambient sound">♫</button>
     </header>
     <section class="mission-card glass">
@@ -47,6 +48,7 @@
     </section>
     <div class="bottom-left"><div class="weather-status glass"><span id="weather-icon">☀</span><span><b id="weather-label">GOLDEN HOUR</b><small>26° · COASTAL BREEZE</small></span></div><div class="toast glass" id="toast" aria-live="polite"></div></div>
     <div class="interaction" id="interaction"><span class="keycap">E</span><span id="interaction-label">Discover this place</span></div>
+    <div class="interior-tag" id="interior-tag">MURADPUR · COMMUNITY CAFÉ</div>
     <div class="controls-hint"><span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> MOVE</span><span><kbd>SHIFT</kbd> RUN</span><span><kbd>SPACE</kbd> HOP</span><span><kbd>E</kbd> INTERACT</span><span><kbd>DRAG</kbd> LOOK</span></div>
     <div class="touch-controls" id="touch-controls">
       <div class="joystick" id="joystick"><div class="joy-ring"></div><div class="joy-knob" id="joy-knob"></div></div>
@@ -54,6 +56,12 @@
     </div>
     <button class="map-close" id="map-close">CLOSE MAP <span>×</span></button>
     <div class="map-overlay" id="map-overlay"><div class="map-overlay-title"><small>THE PORT CITY</small><b>Chattogram</b><span>Five neighborhoods. One restless coast.</span></div><div class="map-overlay-places" id="map-overlay-places"></div></div>
+    <section class="city-panel glass" id="city-panel" aria-label="City life menu" aria-modal="true" role="dialog">
+      <header class="panel-heading"><div><small>CHAPTER 01 · MURADPUR</small><h2 id="panel-title">City life</h2></div><button id="panel-close" aria-label="Close menu">×</button></header>
+      <nav class="panel-tabs"><button data-tab="business" class="selected">BUSINESS</button><button data-tab="missions">JOBS</button><button data-tab="inventory">POCKET</button></nav>
+      <div id="panel-content" class="panel-content"></div>
+      <div class="panel-footer"><span id="wallet-label">WALLET · ৳ 32,000</span><span id="save-status">AUTO-SAVE ON</span></div>
+    </section>
     <div id="loading" class="loading"><span class="loading-mark">C✳</span><span>WAKING UP THE CITY</span></div>
   </main>
   <script type="module" src="./game.js"></script>
